@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class PokemonController(private val pokemonService: PokemonService) {
 
-    @GetMapping("/pokemons")
+    @GetMapping("api/pokemons")
     fun getAllPokemons(): List<Pokemon> = pokemonService.getAllPokemons()
 
-    @GetMapping("/pokemon/{id}")
+    @GetMapping("api/pokemons/{id}")
     fun getPokemonById(@PathVariable("id") id: Int): Pokemon? =
         pokemonService.getPokemonById(id)
 }
