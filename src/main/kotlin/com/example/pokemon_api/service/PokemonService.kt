@@ -9,18 +9,23 @@ import java.io.InputStreamReader
 
 @Service
 class PokemonService {
+    private val pokemons: List<Pokemon>
 
-    fun getAllPokemons(): List<Pokemon> {
-        // Load the JSON file from resources/static
+    init {
         val resource = ClassPathResource("static/pokedex.json")
         val objectMapper = jacksonObjectMapper()
 
-        val root = objectMapper.readValue<Map<String, List<Pokemon>>>(InputStreamReader(resource.inputStream))
+        val root = objectMapper.readValue<Map<String, List<Pokemon>>>(
+                InputStreamReader(resource.inputStream)
+                )
 
-        return root["pokemon"] ?: emptyList()
+        pokemons = root["pokemon"] ?: emptyList()
     }
+
+    fun getAllPokemons(): List<Pokemon> = pokemons
 
     fun getPokemonById(id: Int): Pokemon? {
-        return getAllPokemons().find { it.id == id }
+        return pokemons.find { it.id == id }
     }
+
 }
