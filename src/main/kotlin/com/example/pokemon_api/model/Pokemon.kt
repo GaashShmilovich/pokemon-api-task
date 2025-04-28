@@ -10,7 +10,8 @@ import java.net.URL
 data class Pokemon(
     @JsonProperty("num") private val num: String,
     val name: String,
-    val type: List<String>,
+    @JsonProperty("type")
+    val types: List<PokemonType>,
     val img: URL
 ) {
     val id: Int
