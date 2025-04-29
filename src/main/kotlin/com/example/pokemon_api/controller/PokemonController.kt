@@ -15,7 +15,7 @@ class PokemonController(private val pokemonService: PokemonService) {
     fun getAllPokemons(): List<Pokemon> = pokemonService.getAllPokemons()
 
     @GetMapping("api/pokemons/{id}")
-    fun getPokemonById(@PathVariable id: Int): Pokemon? =
+    fun getPokemonById(@PathVariable id: Int): Pokemon =
         pokemonService.getPokemonById(id)
             ?: throw ResponseStatusException(HttpStatus.NOT_FOUND, "Pokemon with id $id not found")
 }
