@@ -1,5 +1,6 @@
 package com.example.pokemon_api.model
 
+import com.fasterxml.jackson.annotation.JsonAlias
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.annotation.JsonPropertyOrder
@@ -10,7 +11,7 @@ import java.net.URL
 data class Pokemon(
     @JsonProperty("num") private val num: String,
     val name: String,
-    @JsonProperty("type")
+    @JsonAlias("type")
     val types: List<PokemonType>,
     val img: URL
 ) {
