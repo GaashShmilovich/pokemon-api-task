@@ -13,6 +13,6 @@ class PokemonController(private val pokemonService: PokemonService) {
     fun getAllPokemons(): List<Pokemon> = pokemonService.getAllPokemons()
 
     @GetMapping("api/pokemons/{id}")
-    fun getPokemonById(@PathVariable("id") id: Int): Pokemon? =
+    fun getPokemonById(@PathVariable id: Int): Pokemon? =
         pokemonService.getPokemonById(id)
 }
