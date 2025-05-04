@@ -25,6 +25,9 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+	testCompileOnly("org.assertj:assertj-core:3.11.1")
+	testImplementation("org.mockito:mockito-core:4.0.0")
+	testImplementation("org.mockito.kotlin:mockito-kotlin:4.0.0")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.3")
 }
 
