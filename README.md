@@ -35,9 +35,17 @@ This is a simple REST API that provides information about the original 151 Poké
 4. Access the API at `http://localhost:8080`.
 
    Example API calls:
-    - `GET http://localhost:8080/pokemons`
-    - `GET http://localhost:8080/pokemons/1`
+   - `GET http://localhost:8080/pokemons`
+   - `GET http://localhost:8080/pokemons/1`
 
 ## Notes
 
 - This API currently only supports the original 151 Pokémon, and the data is read from the `src/main/resources/static/pokemons.json` file.
+
+## Testing
+
+### Running Tests
+
+Run all tests using:
+```bash
+./gradlew test
