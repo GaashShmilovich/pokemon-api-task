@@ -7,11 +7,7 @@ import org.springframework.stereotype.Service
 @Service
 class PokemonService(@Autowired val pokemonJsonLoader: PokemonJsonLoader) {
 
-    private val pokemons: List<Pokemon>
-
-    init {
-        pokemons = pokemonJsonLoader.loadFromResource().map { it.toDomain() }
-    }
+    private val pokemons: List<Pokemon> = pokemonJsonLoader.loadFromResource().map { it.toDomain() }
 
     fun getAllPokemons(): List<Pokemon> = pokemons
 
