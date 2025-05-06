@@ -19,6 +19,7 @@ class PokemonServiceTest {
     private lateinit var existingPokemon: Pokemon
     private lateinit var mockData: List<PokemonDto>
 
+
     private fun getMockData(): List<PokemonDto> {
         return listOf(
             PokemonDto("001", "Bulbasaur", listOf(PokemonType.GRASS), URI.create("${baseUrl}1.png")),
