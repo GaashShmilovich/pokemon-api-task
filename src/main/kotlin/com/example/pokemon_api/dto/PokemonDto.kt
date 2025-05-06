@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.annotation.JsonPropertyOrder
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize
-import java.net.URL
+import java.net.URI
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonPropertyOrder("id", "name", "type", "img")
@@ -18,7 +18,7 @@ data class PokemonDto(
     @JsonAlias("type")
     @JsonDeserialize(contentUsing = PokemonTypeDeserializer::class)
     val types: List<PokemonType>,
-    val img: URL
+    val img: URI?
 ) {
     fun toDomain(): Pokemon = Pokemon(
         id = num.toInt(),
